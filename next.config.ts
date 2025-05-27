@@ -1,24 +1,14 @@
-// next.config.ts
-import path from "path";
-import type { NextConfig } from "next";
+// next.config.js
+const path = require("path");
 
-const nextConfig: NextConfig = {
-  // Si usas App Router, mantén esto:
-  experimental: {
-    appDir: true,
-  },
-
-  // Aquí definimos el alias '@' → la carpeta raíz
+/** @type {import('next').NextConfig} */
+module.exports = {
   webpack(config) {
     config.resolve.alias = {
-      // conserva cualquier alias existente
-      ...(config.resolve.alias ?? {}),
-      // añade '@' apuntando al root
+      ...(config.resolve.alias || {}),
       "@": path.resolve(__dirname),
     };
     return config;
   },
 };
-
-export default nextConfig;
 
