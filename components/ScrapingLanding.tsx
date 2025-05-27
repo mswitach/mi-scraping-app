@@ -59,9 +59,9 @@ const ScrapingLanding = () => {
     { icon: <Clock className="h-6 w-6" />, value: "<1s", label: "Tiempo Respuesta" }
   ];
 
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
+  const scrollToSection = (sectionId: string) => {
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  setIsMenuOpen(false);
   };
 
   return (
